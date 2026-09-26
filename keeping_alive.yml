@@ -1,0 +1,14 @@
+name: Keepalive Render Service
+
+on:
+  schedule:
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Web Service
+        run: curl -s https://freellmapi-7d7b.onrender.com
